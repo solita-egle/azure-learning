@@ -28,11 +28,14 @@ RUN apt-get update \
         net-tools \
         cron \
         telnet 
+        #php \
+        #php-pgsql
 
 
 
 #Install NGinx service
 RUN apt-get install -y --no-install-recommends nginx
+
 #Copy conf
 WORKDIR /etc/nginx/
 
@@ -47,7 +50,7 @@ RUN rm ./sites-available/default
 # Takes our local copy of the conf
 ADD nginx.conf ./nginx.conf
 RUN mkdir -p /opt/web
-ADD index.html /opt/web/
+ADD ./data/index.php /opt/web/
 
 # Expose the port for access
 EXPOSE 80/tcp
