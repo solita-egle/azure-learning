@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
+#FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -32,6 +33,9 @@ RUN apt-get update \
         #php-pgsql
 
 
+RUN apt-get install -y php7.4 php7.4-fpm php7.4-xml php7.4-pgsql
+
+COPY ./data/index.php /opt/web/
 
 #Install NGinx service
 RUN apt-get install -y --no-install-recommends nginx
@@ -57,3 +61,4 @@ EXPOSE 80/tcp
 
 # Run the Nginx server
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+
