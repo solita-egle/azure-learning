@@ -1,21 +1,25 @@
 version: "3"
 services:
   nginx:
+    platform: linux/amd64
+    image: crsimplewebpage.azurecr.io/simple-html
     build:
       context: .
       dockerfile: Dockerfile
     ports: 
-      - "8080:80"
+      - "80:80"
     networks:
       - internal
-    volumes:
-      - ./data/:/opt/web/
+    #volumes:
+     # - ./data/:/opt/web/
   php:
+    platform: linux/amd64
+    image: crsimplewebpage.azurecr.io/php-fpm
     build:
       context: .
       dockerfile: php/Dockerfile
-    volumes:
-      - ./data/:/opt/web/
+    #volumes:
+     # - ./data/:/opt/web/
     networks:
       - internal
 networks:
