@@ -33,7 +33,7 @@ RUN apt-get update \
         #php-pgsql
 
 
-RUN apt-get install -y php7.4 php7.4-fpm php7.4-xml php7.4-pgsql
+#RUN apt-get install -y php7.4 php7.4-fpm php7.4-xml php7.4-pgsql
 
 COPY ./data/index.php /opt/web/
 

@@ -34,7 +34,7 @@
                 $host = "psql-egle-db4webapp.postgres.database.azure.com";
                 $database = "webapp";
                 $user = "egleonadmin@psql-egle-db4webapp";
-                $password = "ask_egle";
+                $password = "";
 
                 // Initialize connection object.
                 $connection = pg_connect("host=$host dbname=$database user=$user password=$password")
