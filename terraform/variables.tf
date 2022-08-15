@@ -31,6 +31,11 @@ variable "container_registry_name_prefix" {
   description   = "Prefix of the container registry name."
 }
 
+variable "azure_postgres_name_prefix" {
+  default       = "psql"
+  description   = "Prefix of the Azure Databases for Postgres name."
+}
+
 
 
  
