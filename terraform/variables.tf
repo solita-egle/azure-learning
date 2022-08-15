@@ -8,22 +8,29 @@ variable "tag_duedate" {
   default = "01.10.2022"
 }
 
-variable "resource_group_location" {
+variable "tags" {
+  default = {
+      Owner = "egle.palk@solita.fi"
+      Duedate = "01.10.2022"
+      }
+  description = "Required Solita Azure tags"
+}
+
+variable "default_location" {
   default = "westeurope"
   description   = "Location of the resource group."
 }
 
 variable "resource_group_name_prefix" {
   default       = "rg"
-  description   = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
+  description   = "Prefix of the resource group name."
 }
 
-variable "tags" {
-  default = {
-      Owner = "egle.palk@solita.fi"
-      Duedate = "01.10.2022"
-      }
-  description = "Required Azure tags"
+variable "container_registry_name_prefix" {
+  default       = "cr"
+  description   = "Prefix of the container registry name."
 }
+
+
 
  
